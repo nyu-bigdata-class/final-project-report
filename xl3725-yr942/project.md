@@ -41,13 +41,21 @@ For a traditional job scheduler, we need to allocate resources and clusters to t
 ## Reward
 We use a similar idea from the original paper that our scheduler not only focus on the total usage of the total resources, but also try to maintain the balance between different clusters, minimizing the difference and avoiding problems caused by single cluster resource shortage. Usually, these two ideas seem to be contractive, and we need to construct a reward function that could combine them together.
 We define the utilization of cluster m having N resources as:
+
 ![GitHub Logo](images/formula_1.png)
+
 The average utilization could be represented as:
+
 ![GitHub Logo](images/formula_2.png)
+
 The difference between clusters could be expressed as:
+
 ![GitHub Logo](images/formula_3.png)
+
 Our reward is a linear combination of utilization and difference:
+
 ![GitHub Logo](images/formula_4.png)
+
 Here we introduce alpha and beta to scale those two parts and try to make one of them more important in some cases.
 
 
