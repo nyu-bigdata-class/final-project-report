@@ -5,6 +5,13 @@ author:
   - John Appleseed <ja@example.com>
 ---
 
+# Introduction
+
+
+# Approach
+
+
+
 > In what follows instructions (including this one) are in blockquotes, while
 > text not in blockquotes is a sample. You should of course replace the title
 > author metadata that shows up above with appropriate values.
