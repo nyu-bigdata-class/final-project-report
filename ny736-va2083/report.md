@@ -56,7 +56,10 @@ hog, thus reducing waiting time for mice.
 * Both User X and User Y have same arrival rate
 
 ![xa](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/xa.png) ![ya](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/ya.png)
-* Runtime is sampled using exponential, resources R1, R2 are sampled using binomial distribution
+* Runtime is sampled using exponential distribution with mean runtime of user X < mean runtime of user Y
+![xr](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/xr.png) ![yr](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/yr.png)
+
+*  resources R1, R2 are sampled using binomial distribution
 * Mean of runtime, R1, R2 of User X is less than that of User Y
 
 # Conclusion
