@@ -1,8 +1,8 @@
 ---
-title: "Project Title"
+title: "Scheduling Algorithm for Clusters with Resource Hogs and Mice"
 author:
-  - Paddington Bear <bear@paddington.com>
-  - John Appleseed <ja@example.com>
+  - Neeraj Yadav <ny736@nyu.edu>
+  - Vinayak Agarwal <va2083@nyu.edu>
 ---
 
 # Motivation
