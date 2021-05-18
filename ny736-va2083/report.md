@@ -52,15 +52,20 @@ hog, thus reducing waiting time for mice.
 
 * We have two users X and Y.
 * We assume that tasks are independent
-* We sample 300 tasks for each user demanding two resources <R1, R2>
+* We sample 300 tasks for each user demanding two resources <CPU, Memory>
 * Both User X and User Y have same arrival rate
 
 ![xa](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/xa.png) ![ya](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/ya.png)
 * Runtime is sampled using exponential distribution with mean runtime of user X < mean runtime of user Y
 ![xr](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/xr.png) ![yr](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/yr.png)
 
-*  resources R1, R2 are sampled using binomial distribution
-* Mean of runtime, R1, R2 of User X is less than that of User Y
+* Resources CPU is sampled using binomial distribution with mean cpu usage of user X < mean cpu usage of user Y
+
+![xc](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/xc.png) ![yc](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/yc.png)
+
+* Resources Memory is sampled using binomial distribution with mean memory usage of user X < mean memory usage of user Y
+
+![xm](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/xm.png) ![ym](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/ym.png)
 
 # Conclusion
 
