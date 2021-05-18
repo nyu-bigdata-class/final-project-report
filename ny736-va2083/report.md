@@ -36,7 +36,7 @@ t_wait = t_1 + t_2 + ... + t_m
 t_run = t_1 + t_2 + ... + t_n
 Load Factor = t_wait/ t_run 
 ```
-*
+* If the load factor is greater than the threshold alpha, then we say that it's the time to start preemption. Also, note that how frequently we check the load factor depends on the simulator frequency "Gamma".  
 
 # Experiment Results
 
