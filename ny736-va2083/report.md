@@ -20,7 +20,7 @@ DRF is sharing incentive in case of homogeneous jobs. But if jobs have varied ru
 * The above mentioned dominant share and dominant resource are as per the DRF. We define a new metric Sharing Incentive Dominant Share (SIDS) for each user. SIDS is defined as the linear combination of the user's dominant share as per the DRF algorithm and the time for which the user had the resources.  
 ```
 Sharing Incentive Dominant Share (SIDS) = p * (DRF's Dominant Share) + (1-p) * (t)
-
+where p ∈ (0, 1) and t is the time for which user had the resources
 ```
 
 # Experiment Results
