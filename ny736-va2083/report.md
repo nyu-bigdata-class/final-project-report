@@ -26,6 +26,18 @@ where p ∈ (0, 1) and t is the time for which user had the resources
 
 * In our algorithm, 'p' acts like a weighing factor between user's dominant share and time for which the user had the resources. If a user is having the resources for long time then it would increase his SIDS and hence his priority would be decreased. This solves the problem when a User X has million of resource mice tasks, while another user Y has a resource hog. Clearly user Y has a high DRF's dominant share compared to user X. Hence user X's mice tasks would be allocated first in case of DRF. It might be possible that the mice tasks of user X occupy huge chunk of the cluster's resources and they have a very long running time. Since DRF doesn't preempt, the tasks of user Y would have to wait. While in case of our algorithm, the SIDS value of user X would increase with time and after a certain point of time, SIDS of X would become larger than the SIDS of user Y. Hence user Y wouldn't have to wait for a long time.  
 
+* We maintain running queue and waiting queue. Running queue contains the jobs which are having the resources while the waiting queue contain the jobs
+which aren't having the resources. Our preemption strategy is based on the load factor. We compute the load factor by summing the waiting times of all the jobs in 
+the waiting queue and divide it by the summation of the running time of all the jobs in the running queue.
+```
+Let there are m jobs in waiting queue with waiting time as t_1, t_2, ...,t_m
+Let there are n jobs in running queue with running time as t_1, t_2,...., t_n 
+t_wait = t_1 + t_2 + ... + t_m
+t_run = t_1 + t_2 + ... + t_n
+Load Factor = t_wait/ t_run 
+```
+*
+
 # Experiment Results
 
 # Conclusion
