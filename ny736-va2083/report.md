@@ -94,6 +94,16 @@ hog, thus reducing waiting time for mice.
 
 ![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/u2x.png)  ![uy](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/u2y.png)
 
+## Effect of Hyperparameter
+
+![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/p.png)
+
+
+![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/a.png)
+
+
+![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/b.png)
+
 
 # Conclusion
 
