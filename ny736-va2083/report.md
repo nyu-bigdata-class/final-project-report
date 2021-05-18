@@ -50,6 +50,8 @@ hog, thus reducing waiting time for mice.
 
 # Experiment Results
 
+* We have two users X and Y.
+
 # Conclusion
 
 # Future Work
