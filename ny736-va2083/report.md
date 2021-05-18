@@ -45,6 +45,8 @@ if Load Factor > alpha
   else
       don't preempt
 ```
+* We use preemption mechanism to avoid the cases like, a resource hog job arrives first and DRF allocates resource to the hog. After sometime, a resource mice arrives, since DRF doesn't preempt the resource mice would have to wait till the hog finishes. However, if we have a preemption mechanism then we can preempt the 
+hog, thus reducing waiting time for mice.
 
 # Experiment Results
 
