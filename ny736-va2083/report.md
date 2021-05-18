@@ -66,6 +66,11 @@ hog, thus reducing waiting time for mice.
 * Resources Memory is sampled using binomial distribution with mean memory usage of user X < mean memory usage of user Y
 
 ![xm](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/xm.png) ![ym](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/ym.png)
+* Clearly user X is resource mice and user Y is resource hog
+* Total resources available <1000, 10000>. We set p = 0.5, alpha = 2, beta = 50 and gamma = 50.
+
+![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/ux.png)  ![uy](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/uy.png)
+
 
 # Conclusion
 
