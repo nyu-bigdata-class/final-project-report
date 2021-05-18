@@ -15,7 +15,7 @@ DRF is sharing incentive in case of homogeneous jobs. But if jobs have varied ru
 
 [Themis](https://cs.nyu.edu/~apanda/classes/sp21/papers/themis.pdf) overcomes the sharing incentive problem of DRF. It uses a preemptive approach and seeks to achieve a finish time fairness. We take inspiration from Themis and DRF. We devise a new fairness metric. Our algorithm is preemptive and is sharing incentive in a more general setting i.e. jobs can be resource hogs or mice.  
 
-# Approach
+# Our Approach: Sharing Incentive Dominant Resource Fairness (SIDRF)
 
 * Similar to DRF, we compute the share of each resource allocated to a user. We take the maximum of all the shares i.e. dominant share. The resource correspondint to the maximum share is called as dominant share.
 * The above mentioned dominant share and dominant resource are as per the DRF. We define a new metric Sharing Incentive Dominant Share (SIDS) for each user. SIDS is defined as the linear combination of the user's dominant share as per the DRF algorithm and the time for which the user had the resources.  
