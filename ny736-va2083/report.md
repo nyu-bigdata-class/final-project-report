@@ -50,6 +50,7 @@ hog, thus reducing waiting time for mice.
 
 # Experiment Results
 
+## Experiment 1
 * We have two users X and Y.
 * We assume that tasks are independent
 * We sample 300 tasks for each user demanding two resources <CPU, Memory>
@@ -70,6 +71,28 @@ hog, thus reducing waiting time for mice.
 * Total resources available <1000, 10000>. We set p = 0.5, alpha = 2, beta = 50 and gamma = 50.
 
 ![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/ux.png)  ![uy](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/uy.png)
+
+## Experiment 2
+* We have two users X and Y.
+* We assume that tasks are independent
+* We sample 1000 tasks for each user X and 500 tasksfor user Y demanding two resources <CPU, Memory>
+* Both User X and User Y have same arrival rate
+
+![xa](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/x2a.png) ![ya](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/y2a.png)
+* Runtime is sampled using exponential distribution with mean runtime of user X > mean runtime of user Y
+![xr](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/x2r.png) ![yr](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/y2r.png)
+
+* Resources CPU is sampled using binomial distribution with mean cpu usage of user X < mean cpu usage of user Y
+
+![xc](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/x2c.png) ![yc](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/y2c.png)
+
+* Resources Memory is sampled using binomial distribution with mean memory usage of user X < mean memory usage of user Y
+
+![xm](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/x2m.png) ![ym](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/y2m.png)
+* In this setup, user X demands lot of time consuming mice tasks i.e. 1000 tasks demanding less cpu and memory resources but for a large amount of time while user Y has fewer resource hog tasks i.e. demanding more of cpu and memeory but having a smaller runtime
+* Total resources available <1000, 10000>. We set p = 0.5, alpha = 2, beta = 50 and gamma = 50.
+
+![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/u2x.png)  ![uy](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/u2y.png)
 
 
 # Conclusion
