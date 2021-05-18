@@ -5,9 +5,13 @@ author:
   - John Appleseed <ja@example.com>
 ---
 
-# Introduction
-
-
+# Introduction 
+Resource allocation is very crucial in a cluster where many users compete with each other 
+over multiple resources. [Dominant Resource Fairness](http://web.eecs.umich.edu/~mosharaf/Readings/DRF.pdf) computes the share of each resource
+allocated to a user. It defines dominant resource of a user as the resource with maximum share among all the resources allocated to the user.
+DRF seeks to maximize the minimum dominant share across all users.  
+For example, if dominant resource of user X is CPU and dominant resource of user X is  memory, DRF attempts to equalize user A’s
+share of CPUs with user B’s share of memory. DRF is essentially max-min fairness if we restrict the number of resources to one.
 # Approach
 
 
