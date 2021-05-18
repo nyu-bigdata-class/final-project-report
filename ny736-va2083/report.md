@@ -36,7 +36,15 @@ t_wait = t_1 + t_2 + ... + t_m
 t_run = t_1 + t_2 + ... + t_n
 Load Factor = t_wait/ t_run 
 ```
-* If the load factor is greater than the threshold alpha, then we say that it's the time to start preemption. Also, note that how frequently we check the load factor depends on the simulator frequency "Gamma".  
+* If the load factor is greater than the threshold alpha, then we say that it's the time to start preemption. Also, note that how frequently we check the load factor depends on the simulator frequency "Gamma". As the load factor crosses threshold, we kicks on preemption strategy. We go over all the running jobs and if the runtime of the user to which that job belongs is greater than the minimum of average finish time of job divided by waiting queue length and a constant beta then the job is preempted.
+```
+\\Preemption strategy
+IF Load Factor > alpha
+  if user's run time > min (average finish time of jobs/waiting queue length, beta)
+      preempt
+  else
+      don't preempt
+```
 
 # Experiment Results
 
