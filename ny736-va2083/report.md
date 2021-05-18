@@ -54,6 +54,7 @@ hog, thus reducing waiting time for mice.
 * We assume that tasks are independent
 * We sample 300 tasks for each user demanding two resources <R1, R2>
 * Both User X and User Y have same arrival rate
+![xa](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/xa.png)
 * Runtime is sampled using exponential, resources R1, R2 are sampled using binomial distribution
 * Mean of runtime, R1, R2 of User X is less than that of User Y
 
