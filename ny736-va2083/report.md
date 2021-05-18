@@ -5,7 +5,7 @@ author:
   - John Appleseed <ja@example.com>
 ---
 
-# Introduction and Related Work
+# Motivation
 Resource allocation is very crucial in a cluster where many users compete with each other 
 over multiple resources. [Dominant Resource Fairness](http://web.eecs.umich.edu/~mosharaf/Readings/DRF.pdf) computes the share of each resource
 allocated to a user. It defines dominant resource of a user as the resource with maximum share among all the resources allocated to the user.
