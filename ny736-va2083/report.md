@@ -50,7 +50,11 @@ if Load Factor > alpha
 * We use preemption mechanism to avoid the cases like, a resource hog job arrives first and DRF allocates resource to the hog. After sometime, a resource mice arrives, since DRF doesn't preempt the resource mice would have to wait till the hog finishes. However, if we have a preemption mechanism then we can preempt the 
 hog, thus reducing waiting time for mice.
 
-* Also, we retain the staregy proofness of DRF. Since, we also have DRF's dominant share in the SIDS. If some user lies and demands more resources then his SIDS would be large and would be given lesser priority. We preempts only when the we have waiting jobs. Also, after preemption, we gave all the jobs in waiting queue a chance to be back in running queue. This is obviously determined by the SIDS metric. Hence, we also retain the pareto-efficiency property of DRF. Moreover our policy is also envy-free similar to DRF. 
+* Also, we retain the startegy proofness of DRF. Since, we also have DRF's dominant share in the SIDS. If some user lies and demands more resources then his SIDS would be large and would be given lesser priority.
+
+* We preempts only when we have waiting jobs. Also, after preemption, we give all jobs in waiting queue a chance to be back in running queue. This is obviously determined by the SIDS metric. Hence, we also retain the pareto-efficiency property of DRF.
+
+* Moreover our policy is also envy-free similar to DRF. 
 
 
 # Experiment Results
