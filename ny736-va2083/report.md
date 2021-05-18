@@ -95,15 +95,19 @@ hog, thus reducing waiting time for mice.
 ![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/u2x.png)  ![uy](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/u2y.png)
 
 ## Effect of Hyperparameter
+* We use the data from experiment 2 and observe the effect on waiting time for user X and user Y as we vary the hyperparameters.
+
+* We vary the weighing factor 'p' from 0.1 to 0.9. 
 
 ![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/p.png)
 
-
+* We vary the Load Factor from 1 to 5.
 ![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/a.png)
 
-
+* We vary beta from 50 to 250.
 ![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/b.png)
 
+Before conducting experiments, we thought that the policy might not be stable w.r.t. the hyperparameters. But the experiments show that the there are minor fluctuations as we vary the hyperparameters 'p', 'alpha' and 'beta'. 
 
 # Conclusion
 
