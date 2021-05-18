@@ -88,7 +88,7 @@ runtime is less, hence the SIDS value of user X would be less than that of user 
 ## Experiment 2
 * We have two users X and Y.
 * We assume that tasks are independent
-* We sample 1000 tasks for each user X and 500 tasksfor user Y demanding two resources <CPU, Memory>
+* We sample 1000 tasks for each user X and 500 tasks for user Y demanding two resources <CPU, Memory>
 * Both User X and User Y have same arrival rate
 
 ![xa](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/x2a.png) ![ya](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/y2a.png)
