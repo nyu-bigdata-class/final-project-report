@@ -61,7 +61,7 @@ the relevant constraints like latency, power usage and so on. We assume that the
   lowest level and fog devices which perform computation and decision-making at the subsequent higher level. The top level consists of the cloud server where heavy analytics based research can be conducted.
   
   
-  ![architecture](./images/arch-2.png)
+  ![architecture](imagesrch-2.png)
 
 - **Tasks** :
 
@@ -111,25 +111,25 @@ Cloud or edge station| Monitoring message | Cloud or edge
 
 - Task Distribution <br />
   
-  ![completed_tasks](./images/graphs/completed_tasks.png)<br />
+  ![completed_tasks](images/graphs/completed_tasks.png)<br />
 
 - Completion time <br />
   Completion time for the trace is given below. Distributed mode completes at 254, Eviction at 311 and naive at 313.
-  ![completion_time](./images/graphs/completion_time.png) <br />
+  ![completion_time](images/graphs/completion_time.png) <br />
   
 - Average task waiting time <br />
   Lowest task waiting time is achieved by the distributed model. 
-  ![wait_time](./images/graphs/wait_time_by_policy.png) <br />
+  ![wait_time](images/graphs/wait_time_by_policy.png) <br />
 
 - Emergency task wait time <br />
   Lowest emergency wait time at the device is achieved by the eviction policy. Distributed comes second followed by the naive policy.
-  ![emergency_wait_time](./images/graphs/mean_emergency_wait_time_by_policy.png) <br />
+  ![emergency_wait_time](images/graphs/mean_emergency_wait_time_by_policy.png) <br />
 
 - Dropped tasks <br />
   The naive implementation drops a lot more taks since it does not offload resource intensive tasks to cloud. 
-  ![dropped_tasks_by_policy](./images/graphs/dropped_tasks_by_policy.png) <br />
+  ![dropped_tasks_by_policy](images/graphs/dropped_tasks_by_policy.png) <br />
 
-- CPU Utilization <br />
+- CPU Utilization was monitored primarily to measure power effiency. <br />
 ###Tradeoffs
 - Why schedule at the edge?
     - Data locality
@@ -143,12 +143,12 @@ Cloud or edge station| Monitoring message | Cloud or edge
     - Network usage/ bandwidth : Modelling the network usage and bandwidth would provide a more complete picture of the scenario. 
     - Power consumption : While have statistics for CPU utilization, we have not limited scheduling tasks on edge devices based on the cpu utilization.
       Power consumption is important for QoS (Lower power consumption implies better battery life). 
-    - Since we have modelled this on a small trace, the difference in times are small. As rthe model scales, so does the differnce in latencies
+    - Since we have modelled this on a small trace, the difference in times are small. As the model scales, so does the differnce in latencies
 
 - If we had more time,
     - Design hybrid policy - Identify when it is optimal to switch between eviction and distributed policies
     - Model network bandwidth and latencies
-    - Generate larger traces and optimise code to run for the same.     
+    - Generate larger traces and optimise code (PyPy) to run for the same.     
     - Explore swarm optimisation
   
 Repo :  https://github.com/1um0s/edge-scheduler-sim.git
