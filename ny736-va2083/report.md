@@ -11,6 +11,7 @@ over multiple resources. [Dominant Resource Fairness](http://web.eecs.umich.edu/
 allocated to a user. It defines dominant resource of a user as the resource with maximum share among all the resources allocated to the user.
 DRF seeks to maximize the minimum dominant share across all users.For example, if dominant resource of user X is CPU and dominant resource of user Y is  memory, DRF attempts to equalize user X’s share of CPUs with user Y’s share of memory. DRF is essentially max-min fairness if we restrict the number of resources to one.
 DRF is sharing incentive in case of homogeneous jobs. But if jobs have varied runtimes then DRF fails the sharing incentive criteria. Consider a case, when a resource hog job arrives first and then resource mice arrives. In this scenario, the later arriving resource mice would have large waiting times. This is because DRF doesn't preempt the jobs. It allocates the resources, by computing the dominant share of all the available jobs at a particular point of time. Once a job gets the resource, there is no notion of preemption. 
+![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/drf-pic.png)
 
 [Themis](https://cs.nyu.edu/~apanda/classes/sp21/papers/themis.pdf) overcomes the sharing incentive problem of DRF. It uses a preemptive approach and seeks to achieve a finish time fairness. We take inspiration from Themis and DRF. We devise a new fairness metric. Our algorithm is preemptive and is sharing incentive in a more general setting i.e. jobs can be resource hogs or mice.  
 
