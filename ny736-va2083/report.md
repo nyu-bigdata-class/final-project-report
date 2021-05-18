@@ -37,7 +37,7 @@ t_wait = t_1 + t_2 + ... + t_m
 t_run = t_1 + t_2 + ... + t_n
 Load Factor = t_wait/ t_run 
 ```
-* If the load factor is greater than the threshold alpha, then we say that it's the time to start preemption. Also, note that how frequently we check the load factor depends on the simulator frequency "Gamma". As the load factor crosses threshold, we kicks on preemption strategy. We go over all the running jobs and if the runtime of the user to which that job belongs is greater than the minimum of average finish time of job divided by waiting queue length and a constant beta then the job is preempted.
+* If the load factor is greater than the threshold alpha, then we say that it's the time to start preemption. Also, note that how frequently we check the load factor depends on the simulator frequency "Gamma". As the load factor crosses threshold, we kicks on preemption strategy. We go over all the running jobs and if the runtime of the user to which that job belongs is greater than the minimum of average finish time of job divided by waiting queue length and a constant beta then the job is preempted. 
 ```
 \\Preemption strategy
 if Load Factor > alpha
@@ -46,8 +46,12 @@ if Load Factor > alpha
   else
       don't preempt
 ```
+* After preemption, the jobs are allocated based on the SIDS metric.
 * We use preemption mechanism to avoid the cases like, a resource hog job arrives first and DRF allocates resource to the hog. After sometime, a resource mice arrives, since DRF doesn't preempt the resource mice would have to wait till the hog finishes. However, if we have a preemption mechanism then we can preempt the 
 hog, thus reducing waiting time for mice.
+
+* Also, we retain the staregy proofness of DRF. Since, we also have DRF's dominant share in the SIDS. If some user lies and demands more resources then his SIDS would be large and would be given lesser priority. We preempts only when the we have waiting jobs. Also, after preemption, we gave all the jobs in waiting queue a chance to be back in running queue. This is obviously determined by the SIDS metric. Hence, we also retain the pareto-efficiency property of DRF. Moreover our policy is also envy-free similar to DRF. 
+
 
 # Experiment Results
 
@@ -121,6 +125,11 @@ runtime is less, hence the SIDS value of user X would be less than that of user 
 * Before conducting experiments, we thought that the policy might not be stable w.r.t. the hyperparameters. But the experiments show that the there are minor fluctuations as we vary the hyperparameters 'p', 'alpha' and 'beta'.
 
 # Conclusion
+We conclude that the improvise metric which gives importance to the runtime is crucial to asses the dominant nature of a user. 
+The novel metric, SIDS is dynamic and is more robust compared to the metric of DRF. It is more genric and can handle the cases of resource hogs and resource mice more efficiently. Moreover, preemption plays an important role in equalizing the SIDS value across users. Though DRF, tries to equalize the dominant share while allocating resources but it loses control once allocation is done. While our policy is more robust since it keeps a track of SIDS and makes a preemption when SIDs value of one user becomes large than the rest. Therefore our plocy is sharing incentive in a broader setting. 
 
 # Future Work
+In the future, we take inspiration from simulated annealing and wanted to use an energy minimization approach. Basically, we 
+would use two exponential functions to define the energy of system. One of the energy function, would increase exponentially as the waiting time of jobs increases and other one would decrease exponentially as the resources are allocated. We subtract the second from first energy function. Since exponential functions are convex and the system's energy is just a linear combination fo two convex fucntion. The resultant fucntion is convex. As local minima of strictly convex function is also the global minima. We would like to use traditional machine learning approach to minimize the energy. However, there are resource 
+contraints. Since it is a constrained setting, we would like to use Projected Gradient Descent.
 
