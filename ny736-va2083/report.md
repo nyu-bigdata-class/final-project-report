@@ -73,6 +73,10 @@ hog, thus reducing waiting time for mice.
 
 ![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/ux.png)  ![uy](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/uy.png)
 
+* In the above experiment, we have user X with resource mice and user Y with resource hogs arriving at the same time. Also, the running time of the resource mice was less than that of hog. We observe that the waiting time for both the mice and hog
+is decreased in case of our policy (SIDRF). More importantly, the decrease of waiting time for the user X with mice jobs is significantly larger. In this case, we wanted that the user with mice jobs should be favoured more and preemption helps in achieving this. Since the mice jobs have less share and also their 
+runtime is less, hence the SIDS value of user X would be less than that of user Y. Due to which, user X is prefered while allocation and also after a certain point of time the longer jobs of user Y are given resources but they are taken off when load factor increases and SIDS value of user Y becomes larger than that of user X. 
+
 ## Experiment 2
 * We have two users X and Y.
 * We assume that tasks are independent
@@ -95,6 +99,8 @@ hog, thus reducing waiting time for mice.
 
 ![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/u2x.png)  ![uy](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/u2y.png)
 
+* In the above experiment, we have User X with large number of mice jobs with a longer runtime while user Y has fewer reosurce hogs task with shorter runtime. We observe that the waiting time for both the user X and user Y is decreased in case of our policy (SIDRF). In case of DRF, the waiting time per task for User X is more than the waiting time per task for User Y. Because DRF would prefer the user X, as user X's tasks are mice with lesser share. But since they run for a longtime, once allocated the resource would be taken off only when the tasks of User X finishes in case of DRF. Hence tasks of user Y would have to wait for a long time. But in our policy, though tasks of user X would be preferred intially as the runtime is 0 in the begining but as time progresses the SIDS value of user X would grow and when it crosses the SIDS value of user Y. The resource would be taken off from user X. This is evident from a larger decrease in the waiting time for user Y.  
+
 ## Effect of Hyperparameter
 * We use the data from experiment 2 and observe the effect on waiting time for user X and user Y as we vary the hyperparameters.
 
@@ -110,7 +116,9 @@ hog, thus reducing waiting time for mice.
 
 ![ux](https://github.com/neeraj71/final-project-report/blob/main/ny736-va2083/images/b.png)
 
-Before conducting experiments, we thought that the policy might not be stable w.r.t. the hyperparameters. But the experiments show that the there are minor fluctuations as we vary the hyperparameters 'p', 'alpha' and 'beta'. 
+* When we varied 'p' we observed that the waiting time for user Y first decreased slightly with increase in 'p' and then increased with further increase in 'p'. This is because user X jobs have longer runtime and if we give more weight to runtime then user X SIDS value would increase and become larger than SIDS value of user Y. Hence user Y, prefers a p value of 0.5. If we increase the 'p' more than the weight factor of runtime i.e. (1-p) would become small. Hence runtime would have lesser importance in SIDS. Therefore, it would take more time when SIDS of x crosses SIDS of Y and Y would have to wait more. 
+
+* Before conducting experiments, we thought that the policy might not be stable w.r.t. the hyperparameters. But the experiments show that the there are minor fluctuations as we vary the hyperparameters 'p', 'alpha' and 'beta'.
 
 # Conclusion
 
