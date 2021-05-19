@@ -52,32 +52,33 @@ Kubernetes Dashboard can be used to deploy containerized applications to a Kuber
 ## Heavy Weight Computation causing poor performance:
 When sending very high load on the application the app at times became unresponsive or the map on the application interface failed to load.
 For a possible solution we applied horizontal Pod autoscalar, to avoid heavy load on one pod and we were able to solve the performance issue of the MEAN app. Results can be seen in figures below.
-<img src="https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Picture2.png" width="800" height="200">
-![Figure 1: HPA scales up due to high CPU utilization](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Picture2.png "Figure 1: HPA scales up due to high CPU utilization")
 
-![Figure 2: MEAN App running on High Load before crash](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Screen%20Shot%202021-05-11%20at%2011.10.14%20AM.png = 250x250)
 
-![ Figure 3: MEAN App running on High Load after crash](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Screen%20Shot%202021-05-11%20at%2011.09.34%20AM.png =250x250)
+![Figure 1: HPA scales up due to high CPU utilization](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Picture2.png)
+
+![Figure 2: MEAN App running on High Load before crash](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Screen%20Shot%202021-05-11%20at%2011.10.14%20AM.png)
+
+![ Figure 3: MEAN App running on High Load after crash](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Screen%20Shot%202021-05-11%20at%2011.09.34%20AM.png)
 
 
 ## Unresponsive application, possible looping or hanging:
 We induce an infinite loop in the javascript code of the backend. While infinite loop was evoked, application was stuck and CPU and Memory usage for that pod was continuously increasing. After reaching the resource limit specified for the pod, we saw sharp decline in CPU and memory usage and application worked properly after. Results can be seen in figures below.
 
-![Figure 4:CPU and Memory usage sharp increase](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/WhatsApp%20Image%202021-05-18%20at%2010.11.26%20PM.jpeg =250x250)
+![Figure 4:CPU and Memory usage sharp increase](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/WhatsApp%20Image%202021-05-18%20at%2010.11.26%20PM.jpeg)
 
 ## Out of memory error:
 Pod crashed when memory usage exceeded the resource limit. We were able to diagnose this error from Kubernetes backend and  Kubernetes dashboard as seen in figure below.
 
-![Figure 5:CPU and Kubernetes dashboard showing Error](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/WhatsApp%20Image%202021-05-18%20at%2010.18.57%20PM.jpeg =250x250)
+![Figure 5:CPU and Kubernetes dashboard showing Error](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/WhatsApp%20Image%202021-05-18%20at%2010.18.57%20PM.jpeg)
 
-![Figure 6:Kubernetes Backend Pod Description catching error ](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/WhatsApp%20Image%202021-05-18%20at%2010.19.05%20PM.jpeg =250x250)
+![Figure 6:Kubernetes Backend Pod Description catching error ](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/WhatsApp%20Image%202021-05-18%20at%2010.19.05%20PM.jpeg)
 
 ## Uncaught exception or error event in Javascript code:
 None of the selected tools were able to catch the exception throw by application. In order to catch the exception, explicit modifications need to be done both on application side and EFK configuration side to obtain the logs for the exceptions.
 
 # Conclusions
 
-![alt text](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Picture1.png =400x400)
+![alt text](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Picture1.png)
 
 # Related Work 
 
