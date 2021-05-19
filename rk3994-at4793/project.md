@@ -78,6 +78,7 @@ None of the selected tools were able to catch the exception throw by application
 
 # Conclusions
 
+<img src="https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Picture1.png" width="400" height="790">
 ![alt text](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Picture1.png)
 
 # Related Work 
