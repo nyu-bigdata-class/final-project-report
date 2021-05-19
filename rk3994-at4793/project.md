@@ -56,6 +56,8 @@ For a possible solution we applied horizontal Pod autoscalar, to avoid heavy loa
 
 ![Figure 1: HPA scales up due to high CPU utilization](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Picture2.png)
 
+<img src="https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Screen%20Shot%202021-05-11%20at%2011.10.14%20AM.png" width="500" height="400">
+
 ![Figure 2: MEAN App running on High Load before crash](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Screen%20Shot%202021-05-11%20at%2011.10.14%20AM.png)
 
 ![ Figure 3: MEAN App running on High Load after crash](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Screen%20Shot%202021-05-11%20at%2011.09.34%20AM.png)
