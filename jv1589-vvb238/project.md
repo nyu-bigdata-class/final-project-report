@@ -76,11 +76,11 @@ To simulate well-behaved clients, we built a multi-threaded load testing tool th
 
 If a HTTP 429 response is sent by the server, the thread utilizes the backoff factor to calculate sleep times. We tested four strategies to derive the sleep time. These were:
 
-1. $sleep = (backoffFactor)*2^{retryCount – 1}$
-2. $sleep = min(threshold, (backoffFactor)*2^{retryCount – 1})$
-3. $sleep = random(0, (backoffFactor)*2^{retryCount – 1})$
-4. $temp = min(threshold, (backoffFactor)*2^{retryCount – 1})$
-$sleep = temp / ( 2 + random(0, temp) )$
+1. ![backoff-1](https://render.githubusercontent.com/render/math?math=sleep=(backoffFactor)*2^{retryCount-1}&mode=inline)
+2. ![backoff-2](https://render.githubusercontent.com/render/math?math=sleep=min(threshold,%20(backoffFactor)*2^{retryCount-1})&mode=inline)
+3. ![backoff-3](https://render.githubusercontent.com/render/math?math=sleep=random(0,(backoffFactor)*2^{retryCount-1})&mode=inline)
+4. ![temp-backoff-4](https://render.githubusercontent.com/render/math?math=temp=min(threshold,(backoffFactor)*2^{retryCount-1})&mode=inline)
+sleep = temp / ( 2 + random(0, temp) )
 
 Within each of these strategies, we added jitter to all variables to avoid retry storms. The tool records the overall latency time to serve each request as well as the number of retries. 
 The load was decided by progressively increasing the number of concurrent requests till a significant portion of requests started giving errors. 
@@ -109,6 +109,7 @@ We observed that the strategy #4, i.e exponential backoff with randomized jitter
 However, we also noticed inconsistent results within the DB Service. We notice a few cases of users with highest priorities experiencing considerable backoff. We reason this to be caused by us not factoring in the latency of the request when calculating backoffs. We assume CPU and Memory consumption to be the only markers detailing when a process is under extreme loads and fail to factor in the time taken by the microservice to cater to current requests. Since we are dealing with a dynamic system with various factors affecting the behavior of services, individual request latency is also an important factor when calculating backoffs.
 
 We continued experimenting and observed the impact of the different strategies on the CPU and Memory consumption of the microservices. 
+
 
 **Memory Consumption of Memory-Service**:
 ![MEM-memory-service](https://i.imgur.com/q1SQEOc.png)
