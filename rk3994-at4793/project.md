@@ -52,6 +52,7 @@ Kubernetes Dashboard can be used to deploy containerized applications to a Kuber
 ## Heavy Weight Computation causing poor performance:
 When sending very high load on the application the app at times became unresponsive or the map on the application interface failed to load.
 For a possible solution we applied horizontal Pod autoscalar, to avoid heavy load on one pod and we were able to solve the performance issue of the MEAN app. Results can be seen in figures below.
+<img src="https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Picture2.png" width="100" height="100">
 ![Figure 1: HPA scales up due to high CPU utilization](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Picture2.png =250x250)
 
 ![Figure 2: MEAN App running on High Load before crash](https://github.com/Ramneek99/final-project-report/blob/main/rk3994-at4793/Screen%20Shot%202021-05-11%20at%2011.10.14%20AM.png){:height="700px" width="400px"}
